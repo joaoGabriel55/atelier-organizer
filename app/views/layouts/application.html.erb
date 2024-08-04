@@ -1,16 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="garden">
   <head>
     <title>AtelierOrganizer</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body>
-    <%= yield %>
+    <div className="drawer lg:drawer-open">
+      <div class="drawer">
+        <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content flex flex-col">
+          <div class="flex h-screen overflow-hidden">
+            <%= render 'layouts/sidebar' %>
+            <div class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
+              <%= render 'layouts/header' %>
+              <main class="p-10 flex-1 overflow-auto max-w-screen-xl 2xl:mx-auto">
+                <%= yield %>
+              </main>
+            </div>
+          </div>
+        </div>
+        <%= render 'layouts/drawer_side' %>
+      </div>
+    </div>
   </body>
 </html>
