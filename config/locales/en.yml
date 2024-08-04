@@ -1,31 +1,155 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
-#
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
-#
-#     en:
-#       "yes": yup
-#       enabled: "ON"
-
 en:
-  hello: "Hello world"
+  common:
+    info: "Information"
+    edit: "Edit"
+    delete: "Delete"
+    back: "Back"
+    required_fields: "Fields with * are required"
+    submit: "Submit"
+    created_at: "Created at"
+    updated_at: "Updated at"
+    search: "Search"
+    positive: "Yes"
+    negative: "No"
+
+  customers:
+    index: "Customers"
+    search: "Type here to search customers"
+    empty: "No customers registered"
+    empty_search: "No customers found"
+    show_all: "Show all"
+    new: "New Customer"
+    edit: "Edit Customer"
+    new_customer: "Register customer"
+    customers_number: "Total number of customers"
+    search_customers_number: "Total number of customers searched"
+    fields:
+      name: "Full name"
+      phone_number: "Phone number"
+      whatsapp_number: "WhatsApp number"
+      email: "Email"
+      address_section: "Customer address"
+      address:
+        state: "State"
+        city: "City"
+        zip_code: "ZIP code"
+        street: "Street"
+        neighborhood: "Neighborhood"
+        number: "Number"
+        complement: "Complement"
+    success:
+      create: "Customer successfully registered"
+      update: "Customer successfully updated"
+      destroy: "Customer successfully deleted"
+    errors:
+      update: "Error updating customer"
+      create: "Error registering customer"
+      not_found: "Customer not found"
+      delete: "Error deleting customer"
+
+  service_orders:
+    new: "New Service Order"
+    index: "Service Orders"
+    empty: "No Service Orders registered"
+    empty_search: "No Service Orders found"
+    show_all: "Show all"
+    edit: "Edit Service Order"
+    new_customer: "Register Service Order"
+    service_orders_number: "Total number of Service Orders"
+    search_service_orders_number: "Total number of Service Orders searched"
+    fields:
+      customer: "Customer"
+      dressmaker: "Dressmaker"
+      entry_date: "Entry date"
+      delivery_date: "Delivery date"
+      delivery_period: "Delivery period"
+      services: "Services"
+      period:
+        morning: "Morning"
+        afternoon: "Afternoon"
+      status_service: "Status"
+      status:
+        pending: "Pending"
+        finished: "Finished"
+        canceled: "Canceled"
+      paid: "Paid?"
+      total: "Total (R$)"
+    errors:
+      update: "Error updating Service Order"
+      create: "Error registering Service Order"
+      not_found: "Service Order not found"
+      delete: "Error deleting Service Order"
+      exceeded_max_number_of_dressmaker_order_services: "Exceeded maximum number of services per dressmaker"
+      empty_service_order_tasks: "A service order must have at least one service"
+
+  tasks:
+    new: "New Service"
+    index: "Services"
+    empty: "No Services registered"
+    fields:
+      name: "Name"
+      price: "Price (R$)"
+      description: "Description"
+
+  dressmakers:
+    new: "Register new Dressmaker"
+    edit: "Edit Dressmaker"
+    index: "Dressmakers"
+    activated: "Active dressmakers"
+    fired: "Inactive dressmakers"
+    empty: "No Dressmakers registered"
+    empty_fired: "No inactive Dressmakers"
+    dressmakers_number: "Total number of Dressmakers"
+    fields:
+      name: "Name"
+      max_service_quantity: "Max service quantity"
+      start_working_date: "Start working date"
+      end_working_date: "End working date"
+    success:
+      create: "Dressmaker successfully registered"
+      update: "Dressmaker successfully updated"
+      destroy: "Dressmaker successfully deleted"
+    errors:
+      update: "Error updating Dressmaker"
+      create: "Error registering Dressmaker"
+      not_found: "Dressmaker not found"
+      delete: "Error deleting Dressmaker"
+
+  activerecord:
+    models:
+      customer: "Customer"
+      address: "Address"
+      dressmaker: "Dressmaker"
+    attributes:
+      customer:
+        name: "Name"
+        phone_number: "Phone number"
+      address:
+        neighborhood: "Neighborhood"
+        number: "Number"
+      dressmaker:
+        start_working_date: "Start working date"
+        max_service_quantity: "Max service quantity"
+        end_working_date: "End working date"
+    errors:
+      messages:
+        blank: "is required"
+      models:
+        customer:
+          attributes:
+            address:
+              invalid: "invalid"
+        dressmaker:
+          attributes:
+            start_working_date:
+              less_than_or_equal_to: "must be earlier or equal to today"
+            max_service_quantity:
+              greater_than: "must be greater than zero"
+            end_working_date:
+              greater_than: "must be earlier or equal to the start working date"
+        service_order:
+          attributes:
+            entry_date:
+              less_than_or_equal_to: "must be earlier or equal to the delivery date"
+            delivery_date:
+              greater_than_or_equal_to: "must be later or equal to the entry date"

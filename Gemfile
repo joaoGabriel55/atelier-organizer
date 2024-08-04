@@ -50,6 +50,7 @@ group :development, :test do
   gem "rspec-rails", "~> 6.1"
   gem "pry", "~> 0.14.2"
   gem "standard", "~> 1.39"
+  gem "factory_bot_rails", "~> 6.4"
 end
 
 group :development do
@@ -61,15 +62,20 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  
-  gem 'htmlbeautifier'
+
+  gem "htmlbeautifier"
 end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-  gem 'shoulda-matchers', '~> 6.0'
+  gem "shoulda-matchers", "~> 6.0"
 end
 
 gem "tailwindcss-rails", "~> 2.6"
+gem "pg_search"
+
+gem "database_cleaner", "~> 2.0"
+
+gem "faker", "~> 3.4"
