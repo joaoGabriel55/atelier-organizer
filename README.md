@@ -8,10 +8,14 @@ docker compose up --build
 ```
 
 Install dependencies
-
 ```bash
 bundle install
 rails db:setup
+```
+
+### Code formatter
+```bash
+standardrb --fix
 ```
 
 ### TODO
