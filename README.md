@@ -16,7 +16,7 @@ rails db:setup
 
 ### TODO
 
-[] - Setup daisyUI
-[] - Setup main layout
+[x] - Setup daisyUI
+[x] - Setup main layout
 [] - Migrate old models
 [] - Auth using multi tenant and devise

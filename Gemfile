@@ -61,6 +61,8 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  
+  gem 'htmlbeautifier'
 end
 
 group :test do
@@ -69,3 +71,5 @@ group :test do
   gem "selenium-webdriver"
   gem 'shoulda-matchers', '~> 6.0'
 end
+
+gem "tailwindcss-rails", "~> 2.6"
