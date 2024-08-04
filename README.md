@@ -1,24 +1,22 @@
-# README
+# Atelier Organizer
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Setup
 
-Things you may want to cover:
+Start database
+```bash
+docker compose up --build
+```
 
-* Ruby version
+Install dependencies
 
-* System dependencies
+```bash
+bundle install
+rails db:setup
+```
 
-* Configuration
+### TODO
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[] - Setup daisyUI
+[] - Setup main layout
+[] - Migrate old models
+[] - Auth using multi tenant and devise
